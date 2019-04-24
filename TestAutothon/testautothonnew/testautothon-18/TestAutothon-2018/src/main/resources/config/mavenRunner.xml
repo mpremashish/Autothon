@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="test" verbose="2" parallel="instances" thread-count="20" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="Listener.ExtentReport"></listener>
+        <!--<listener class-name="Listener.RetryListener"></listener>-->
+    </listeners>
+
+    <test name="Run Test Execution via factory design patten Suites A">
+        <parameter name="testCaseName" value="testautothon"/>
+        <parameter name="threadsName" value="mobilechrome"/>
+        <parameter name="appiumUrl" value="http://127.0.0.1:4723/wd/hub"/>
+        <classes>
+            <class name="Runner.InitFactory"/>
+        </classes>
+    </test>
+
+
+    <!--<test name="Run Test Execution Suites via B">
+        <parameter name="testCaseName" value="TestCasesexample"/>
+        <parameter name="threadsName" value="webchrome,webchrome"/>
+        <parameter name="appiumUrl" value="http://127.0.0.1:4723/wd/hub"/>
+        <classes>
+            <class name="TestCases.TestCasesexample"/>
+        </classes>
+    </test>-->
+
+</suite>
